@@ -1,0 +1,12 @@
+div{
+    display: flex;
+    justify-content: space-around;
+    color: red;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgb(18, 16, 16);
+}
