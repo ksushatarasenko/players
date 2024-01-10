@@ -148,12 +148,21 @@ function renderTrack(inputTrackForRendering){
     playerElement.controls = true;
     track.append(inputTrackForRendering.artistName + '-'+ inputTrackForRendering.trackTitle, playerElement); 
 
+    playerElement.addEventListener('ended', function(){playNextTrack()});
+
     trackContainer.append(trackImg, track);
     playList.append(trackContainer);
 };
 
 function playNextTrack(){
-    
+    const audioPlayers = document.querySelectorAll('.track audio');
+    if(currentIndex < audioPlayers.length - 1) {
+        currentIndex ++;
+        audioPlayers[currentIndex].play();
+    } else {
+        currentIndex = 0;
+        audioPlayers[currentIndex].play();
+    }
 }
 
 
