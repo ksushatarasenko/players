@@ -1,12 +1,100 @@
 div{
-    display: flex;
-    justify-content: space-around;
-    color: red;
+    /* display: flex;
+    justify-content: space-around; */
+    color: rgb(238, 175, 4);
 }
 
 body{
+    background-color: rgb(18, 16, 16);
+}
+
+.wrapper{
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background-color: rgb(18, 16, 16);
+    gap: 10px;
+}
+/* ======== HEADER =============== */
+.header{
+    display: flex;
+    gap: 10px;
+    margin-left: 10%;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+.header a{
+    color: rgb(238, 175, 4);
+    margin-left: 500%;
+    font-size: 36px;
+    font-weight: 600;
+}
+.logo{
+    width: 40px;
+    height: 40px;
+}
+.logo img{
+    width: 100%;
+}
+/* =============== MAIN ================= */
+.player{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.gradient-text{
+    background: linear-gradient(to right, #fb66d1 0%, #743cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.player a{
+    transition: transform 0.3s ease;
+}
+.player a:hover{
+    transform: scale(0.95);
+}
+.player img{
+    width: 100%;
+    border-radius: 70%;
+}
+/* =============== AUDIO =============== */
+.headerAudio{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 20px;
+}
+.imgHeaderAudio{
+    padding: 5%;
+    margin-left: 30%;
+}
+.titleHeaderAudio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+}
+
+.playList{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.playListItem{
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    margin-left: 10%;
+}
+.track{
+    display: flex;
+    flex-direction: column;
+   
 }

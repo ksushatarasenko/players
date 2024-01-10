@@ -1,28 +1,12 @@
-// Изучите данный https://www.figma.com/file/RwhPrXc5977XHgLbocvfhH/Precourse-%2F-Sprint-%231-%2F-Week-%231-(Copy)?type=design&node-id=1-12&mode=design&t=WKxdBbXIdkXfWeE7-0
-// Мы создаём переменные и “записываем в них” данные, на основе которых был создан “контент”, кторый мы видим на UI.
-// Нужно различать “статический” контент и динамический. Именно для динамического контента у нас и существуют данные.
-
-// Данамика подразумевает, что
-
-// данных в какой-то момент не было
-// потом они были созданы программой
-// затем могут модифицироваться программой
-// или вовсе быть удалёнными программой​
-
-
-// Вся эта динамика изменений данных должна по итогу упривести к изменениям на UI/API
-
-// ===================================
-
 const playList = {
     playListId: '1',
-    title: 'Hip-hop Hits',
-    coverImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhoEEbGRiKmHyaqcbmthHQS_c5EbRo422U-A&usqp=CAU',
+    title: 'HIP-HOP music MIX',
+    coverImageUrl: './image/hip_hop.png',
     totalInfo: {
         totalCountTrack: 4,
         totalLongTrack: 733,
     },
-    tracks:[
+    tracks1:[
         {
             trackId: '11',
             trackImgUrl: './image/lonely.webp',
@@ -114,48 +98,63 @@ function renderPlayList(playListForRendering){
     renderPlayListHeader(playListForRendering)
     // === render traksTitle
     
-    renderTrack(playListForRendering.tracks[0]);
-    renderTrack(playListForRendering.tracks[1]);
-    renderTrack(playListForRendering.tracks[2]);
-    renderTrack(playListForRendering.tracks[3]);
-    renderTrack(playListForRendering.tracks[4]);
-    renderTrack(playListForRendering.tracks[5]);
-    renderTrack(playListForRendering.tracks[6]);
-    renderTrack(playListForRendering.tracks[7]);
+    renderTrack(playListForRendering.tracks1[0]);
+    renderTrack(playListForRendering.tracks1[1]);
+    renderTrack(playListForRendering.tracks1[2]);
+    renderTrack(playListForRendering.tracks1[3]);
+    renderTrack(playListForRendering.tracks1[4]);
+    renderTrack(playListForRendering.tracks1[5]);
+    renderTrack(playListForRendering.tracks1[6]);
+    renderTrack(playListForRendering.tracks1[7]);
  
 }
 
 function renderPlayListHeader(playListforRendering){
-    const divElement = document.createElement('div')
+    const imgHeaderAudio = document.querySelector('.imgHeaderAudio');
+    const titleHeaderAudio = document.querySelector('.titleHeaderAudio');
+   
     const titlePlayListEl = document.createElement('h1');
     titlePlayListEl.innerText = playListforRendering.title;
 
     const coverImgEl = document.createElement('img');
     coverImgEl.src = playListforRendering.coverImageUrl;
+    coverImgEl.style.width = '100%'
 
-    divElement.append(titlePlayListEl, coverImgEl)
-    document.body.append(divElement);
-
+    imgHeaderAudio.append(coverImgEl);
+    titleHeaderAudio.append(titlePlayListEl)
 };
 
+let currentIndex = 0;
 function renderTrack(inputTrackForRendering){
-    const traksElement = document.createElement('div');
-    traksElement.append(inputTrackForRendering.artistName + '-'+ inputTrackForRendering.trackTitle);
-   
+    const playList = document.querySelector('.playList');
 
+    // Создаем контейнер для трека
+    const trackContainer = document.createElement('div');
+    trackContainer.classList.add('playListItem');
 
+    // Создаем элемент для изображения трека
+    const trackImg = document.createElement('div');
+    trackImg.classList.add('trackImg');
+    let trackImgElement = document.createElement('img');
+    trackImgElement.src = inputTrackForRendering.trackImgUrl;
+    trackImgElement.style.width = '150px';
+    trackImg.append(trackImgElement)
+
+    // Создаем элемент для данных трека
+    const track = document.createElement('div');
+    track.classList.add('track');
     let playerElement = document.createElement('audio');
     playerElement.src = inputTrackForRendering.trackAudio.trackUrl;
     playerElement.controls = true;
+    track.append(inputTrackForRendering.artistName + '-'+ inputTrackForRendering.trackTitle, playerElement); 
 
-    let trackImg = document.createElement('img');
-    trackImg.src = inputTrackForRendering.trackImgUrl;
-    trackImg.style.width = '150px'
-
-    traksElement.append(trackImg,playerElement)
-    document.body.append(traksElement)
+    trackContainer.append(trackImg, track);
+    playList.append(trackContainer);
 };
 
+function playNextTrack(){
+    
+}
 
 
 
