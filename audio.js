@@ -125,6 +125,7 @@ function renderPlayListHeader(playListforRendering){
 };
 
 let currentIndex = 0;
+let currentAudioPlayer = null;
 function renderTrack(inputTrackForRendering){
     const playList = document.querySelector('.playList');
 
@@ -146,13 +147,23 @@ function renderTrack(inputTrackForRendering){
     let playerElement = document.createElement('audio');
     playerElement.src = inputTrackForRendering.trackAudio.trackUrl;
     playerElement.controls = true;
-    track.append(inputTrackForRendering.artistName + '-'+ inputTrackForRendering.trackTitle, playerElement); 
+    track.append(inputTrackForRendering.artistName + ' - '+ inputTrackForRendering.trackTitle.toLowerCase(), playerElement); 
 
-    playerElement.addEventListener('ended', function(){playNextTrack()});
+playerElement.addEventListener('ended', function(){playNextTrack()});
+
+playerElement.addEventListener('play', function () {
+        if (currentAudioPlayer && currentAudioPlayer !== playerElement) {
+            currentAudioPlayer.pause();
+        }
+        currentAudioPlayer = playerElement;
+    });
+
 
     trackContainer.append(trackImg, track);
     playList.append(trackContainer);
 };
+
+
 
 function playNextTrack(){
     const audioPlayers = document.querySelectorAll('.track audio');
@@ -163,6 +174,7 @@ function playNextTrack(){
         currentIndex = 0;
         audioPlayers[currentIndex].play();
     }
+    audioPlayers[currentIndex].play();
 }
 
 
