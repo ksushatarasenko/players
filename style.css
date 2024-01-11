@@ -99,3 +99,14 @@ body{
     gap: 15px;
     align-items: center;
 }
+/* ========== VIDEOPlayer ========== */
+.playListVideo{
+    display: flex;
+    flex-direction: column;
+}
+.item{
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
