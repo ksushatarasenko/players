@@ -98,15 +98,10 @@ function renderPlayList(playListForRendering){
     renderPlayListHeader(playListForRendering)
     // === render traksTitle
     
-    renderTrack(playListForRendering.tracks1[0]);
-    renderTrack(playListForRendering.tracks1[1]);
-    renderTrack(playListForRendering.tracks1[2]);
-    renderTrack(playListForRendering.tracks1[3]);
-    renderTrack(playListForRendering.tracks1[4]);
-    renderTrack(playListForRendering.tracks1[5]);
-    renderTrack(playListForRendering.tracks1[6]);
-    renderTrack(playListForRendering.tracks1[7]);
- 
+    
+    for(let i = 0; i < playListForRendering.tracks1.length; i++){
+        renderTrack(playListForRendering.tracks1[i])
+    }
 }
 
 function renderPlayListHeader(playListforRendering){

@@ -46,10 +46,11 @@ renderPlayList(playList);
 function renderPlayList (playListForRendering){
     renderPlayListHeader(playListForRendering);
     
-    renderVideoItem(playListForRendering.video[0]);
-    renderVideoItem(playListForRendering.video[1]);
-    renderVideoItem(playListForRendering.video[2]);
-    renderVideoItem(playListForRendering.video[3]);
+
+    for(let i = 0; i < playListForRendering.video.length; i ++){
+        renderVideoItem(playListForRendering.video[i])
+    }
+   
 };
 
 function renderPlayListHeader(inputPlayList){
