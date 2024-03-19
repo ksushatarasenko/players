@@ -87,6 +87,16 @@ const playList = {
                 isHot: false,
             }
         },
+        {
+            trackId: '19',
+            trackImgUrl: 'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/67/f5/29/67f529f9-041a-4b29-447d-69630bf8662f/cover.jpg/1200x1200bb.jpg',
+            artistName: 'Ласковый зверь',
+            trackTitle: "9 Грамм",
+            trackAudio:{
+                trackUrl:'./mp3/9 Грамм - Ласковый зверь (при уч.Alina Orlova).mp3',
+                isHot: false,
+            }
+        },
     ]
 
 }
