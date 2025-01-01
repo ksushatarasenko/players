@@ -48,6 +48,16 @@ const playList = {
             }
         },
         {
+            trackId: '14_1',
+            trackImgUrl: 'https://i.ytimg.com/vi/Ps_S4gPJXaU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD54GtV7zltxOzMQjahUc9wofhuRA',
+            artistName: 'Nadyr - Ismigul',
+            trackTitle: "Enigma",
+            trackAudio:{
+                trackUrl:'./mp3/nadyr-ismigul-enigma.mp3',
+                isHot: false,
+            }
+        },
+        {
             trackId: '15',
             trackImgUrl: './image/eminam.webp',
             artistName: 'Crystal',
@@ -104,6 +114,16 @@ const playList = {
             trackTitle: "Bam Bam",
             trackAudio:{
                 trackUrl:'./mp3/Misha Miller, Alex Velea – Bam Bam.mp3',
+                isHot: false,
+            }
+        },
+        {
+            trackId: '21',
+            trackImgUrl: 'https://i.scdn.co/image/ab67616d0000b27371f99b38ac1c81d04abc4203',
+            artistName: 'Джерри Хейл, Алена Алена',
+            trackTitle: "Тереза Мария",
+            trackAudio:{
+                trackUrl:'./mp3/dzherri-heyl-alena-alena-tereza-mariya.mp3',
                 isHot: false,
             }
         },
