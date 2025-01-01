@@ -97,6 +97,16 @@ const playList = {
                 isHot: false,
             }
         },
+        {
+            trackId: '20',
+            trackImgUrl: 'https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/4e/45/a34e4559-11b2-c6e0-b9d8-46a846ee6578/cover.jpg/160x160bb.webp',
+            artistName: 'Misha Miller, Alex Velea',
+            trackTitle: "Bam Bam",
+            trackAudio:{
+                trackUrl:'./mp3/Misha Miller, Alex Velea – Bam Bam.mp3',
+                isHot: false,
+            }
+        },
     ]
 
 }
